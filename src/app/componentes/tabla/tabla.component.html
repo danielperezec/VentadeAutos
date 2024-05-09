@@ -1,0 +1,88 @@
+<div class="row">
+  <div class="col-md-5">
+    <label>Filtrar por:</label>
+
+  </div>
+  <div class="col-md-10">
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="codigo/marca/modelo"
+      [(ngModel)]="filtro" (blur)="consultarVehiculo()">
+  </div>
+</div>
+<div class="nuevoauto">
+  <a [routerLink]="['nuevo']" class="btn btn-secondary">Nuevo Automovil</a>
+</div>
+<div class="table-responsive">
+  <div class="table">
+    <thead>
+      <td>
+        <div class="row">
+          <div class="col">
+            <select class="form-control" [(ngModel)]="rows" (change)="consultarVehiculo()">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+            </select>
+          </div>
+        </div>
+
+      </td>
+      <tr class="col-md-4">
+        <th>
+          <button class="btn btn-dark" (click)="toggleImg()">{{ muestraImagen ? "Oculta " :"Muestra "}}Imágenes</button>
+        </th>
+        <th class="text-center">Código</th>
+        <th class="text-center">Marca</th>
+        <th class="text-center">Modelo</th>
+        <th class="text-center">Año</th>
+
+        <th class="text-center">Kilometraje</th>
+        <th class="text-center">Precio</th>
+        <th class="text-center">Calificación</th>
+        <th class="text-center">OP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaVehiculos">
+        <td>
+          <img [src]="item.foto" *ngIf="muestraImagen">
+        </td>
+        <th class="text-center">
+          <a routerLink="/vehiculo/{{item.codigo}}">{{item.codigo}}</a>
+        </th>
+        <td class="text-justify">{{item.marca}}</td>
+        <td class="text-center">{{item.modelo | lowercase}}</td>
+        <td class="text-center">{{item.anio}}</td>
+
+        <td class="text-center">{{item.kilometraje | number}}</td>
+        <td class="text-center">{{item.precio | currency}}</td>
+        <td class="text-center"><app-estrellas [calificacion]="item.calificacion"></app-estrellas></td>
+        <td>
+          <a [routerLink]="['editar/'+item.codigo]" class="btn btn-secondary">Editar</a>
+          <button class="btn btn-dark" (click)="deleteAutoById(item.codigo)">Eliminar</button>
+        </td>
+
+
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link"  aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only" href="#">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" *ngFor="let pag of listaPags"><a class="page-link" (click)="cambiarPag(pag)">{{pag}}</a></li>
+          
+          <li class="page-item">
+            <a class="page-link"  aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only" href="#">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </tfoot>
+  </div>

@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="container bg-dark text-white">
+    <h1>Información de Automovil</h1>
+  </div>
+  <form [formGroup]="formulario">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="staticCodigo8" name="codigo" formControlName="codigo">
+      <label for="staticCodigo8">Código</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo9" name="marca" formControlName="marca">
+      <label for="staticCodigo9">Marca</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo10" name="modelo" formControlName="modelo">
+      <label for="staticCodigo10">Modelo</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo11" name="modelo" formControlName="modelo">
+      <label for="staticCodigo11">anio</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo12" name="kilometraje" formControlName="kilometraje">
+      <label for="staticCodigo12">Kilometraje</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo13" name="precio" formControlName="precio">
+      <label for="staticCodigo13">Precio</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo14" name="calificacion" formControlName="calificacion">
+      <label for="staticCodigo14">Calificación</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo15" name="foto" formControlName="foto">
+      <label for="staticCodigo15">Imágen Automovil</label>
+    </div>
+  </form>
+
+  <div class="guardar">
+    <button class="btn btn-dark" (click)="guardarEdit()">Guardar</button>
+  </div>
+  <div class="regresar">
+    <a class="btn btn-secondary" [routerLink]="['']">Regresar</a>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="container bg-dark text-white">
+    <h1>Información de Nuevo Automovil</h1>
+  </div>
+  <form [formGroup]="formulario">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="staticCodigo" name="codigo" formControlName="codigo">
+      <label for="staticCodigo">Código</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo1" name="marca" formControlName="marca">
+      <label for="staticCodigo1">Marca</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo2" name="modelo" formControlName="modelo">
+      <label for="staticCodigo2">Modelo</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo7" name="anio" formControlName="anio">
+      <label for="staticCodigo7">Anio</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+  
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo3" name="kilometraje" formControlName="kilometraje">
+      <label for="staticCodigo3">Kilometraje</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo4" name="precio" formControlName="precio">
+      <label for="staticCodigo4">Precio</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo5" name="calificacion" formControlName="calificacion">
+      <label for="staticCodigo5">Calificación</label>
+      <span class="text-danger" >Valor requerido</span>
+    </div>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="staticCodigo6" name="foto" formControlName="foto">
+      <label for="staticCodigo6">Imágen Automovil</label>
+    </div>
+  </form>
+
+  <div class="guardar">
+    <button class="btn btn-dark" (click)="guardar()">Guardar</button>
+  </div>
+  <div class="regresar">
+    <a class="btn btn-secondary" [routerLink]="['']">Regresar</a>
+  </div>
+</div>

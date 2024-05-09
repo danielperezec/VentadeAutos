@@ -1,0 +1,14 @@
+img{
+   width: 30em;
+   height: 20em;
+   border-radius: 5%;
+   margin-top: 1.5em;
+   margin-left: 2em;
+   margin-bottom: 1em;
+}
+.card-body{
+    margin-left: 13em;
+}
+.card{
+margin-left: 3em;
+}
